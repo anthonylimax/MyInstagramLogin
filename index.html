@@ -1,20 +1,21 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Instagram</title>
 </head>
 
 <body>
     <section class="all">
         <div class="container--image">
-                <img src="./images/screenshot2.png" alt="printDeTela">
+            <img src="./images/screenshot2.png" alt="printDeTela">
             <div class="container--second--image">
-                    <img src="./images/screenshot1.png" alt="printDeTela">
+                <img src="./images/screenshot1.png" alt="printDeTela">
             </div>
         </div>
         <main>
@@ -23,8 +24,11 @@
                     <img src="./images/Instagram_logo.svg.png" class="logoInstagram" alt="logo"
                         style="width: 160px; margin-bottom: 40px;">
                     <input placeholder="Telefone, nome de usuário ou email" type="text">
-                    <input placeholder="Senha" type="password">
-                    <button class="button--logar"><strong>Entrar</strong></button>
+                    <input name= "senha" id= 'senha' placeholder="Senha" type="password" onkeyup="mudaButton()">
+                    <button class="button--default"
+                            id="button">
+                                <strong>Entrar</strong>
+                    </button>
                     <div class="linhas">
                         <div class="linha-horizontal-left"></div>
                         <p>OU</p>
@@ -41,14 +45,38 @@
             </div>
             <div class="createYourAccount">
                 <p>
-                    Não tem uma conta? <a style="color: blue">Cadastre-se!</a>
+                    Não tem uma conta? <a href="cadastrar.html" style="color: blue; 
+                    text-decoration: none;">Cadastre-se!</a>
                 </p>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <p>Obtenha o aplicativo</p>
+            </div>
+            <div>
+                <img src="./images/appstore.png" style="width: 150px; margin-left: 25px; margin-top: 10px;" alt="appstore">
+                <img src="./images/playstore.png" style="width: 150px;" alt="playstore">
             </div>
         </main>
 
-
+        <footer>
+        </footer>
     </section>
-
+    <script>
+        const input = document.getElementById('senha');
+        const button = document.getElementById('button');
+        const mudaButton = () =>{
+            if(input.value.length > 0){
+                
+                button.classList.remove('button--default');
+                button.classList.add('button--logar');
+            }
+            else{
+                button.classList.remove('button--logar');
+                button.classList.add('button--default');
+            }
+        }   
+        
+    </script>
 </body>
 
 </html>
